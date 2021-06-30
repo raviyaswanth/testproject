@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery tutorial</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<script>
+$(document).ready(function(){
+$("h1").css("color","red");
+$("ul").before("<h2>My favorite foods are</h2>");
+$("h2").css("color","blue");
+$("ul").after("<h3>Also I like to code after eating</h3>");
+$("li:first").text("biryani");
+$("li:first").html("<h4>Biryani</h4>");
+let design = {
+color : "blue",
+background : "green",
+border : "3px solid black"}
+$("h1").css(design);
+$("ul").attr("list-style","none");
+$("button").click(function(){
+alert("value: "+$("#sometext").val());});
+$("h2").addClass("hello");
+$(".hello").css("font-size","35px");
+$("h2").toggleClass("hello");
+$("h2").removeClass("hello");
+$("input").on("keypress",function(){
+$("h2").hide();
+$("h1").fadeOut("slow");
+$("ul").slideUp("slow");
+});
+$("button").on("click",function(){
+$("h2").show();
+$("h1").fadeIn("slow");
+$("ul").slideDown("slow");
+});
+$("#division").draggable();
+$("#divisio").droppable();
+});
+</script>
+<style>
+#division{
+height : 300px;
+width : 300px;
+color : white;
+background : blue;}
+#divisio{
+height : 300px;
+width : 300px;
+color : white;
+background : red;
+}
+</style>
+</head>
+<body>
+<h1>jQuery tutorial</h1>
+<ul>
+<li>puri</li>
+<li>maggie</li>
+<li>masala dosa</li>
+</ul>
+<input type="text" id="sometext" value="">
+<button>submit</button>
+<div id="division">
+<p>you can drag me</p>
+</div>
+<div id="divisio">
+<p>you can drag me</p>
+</div>
+</body>
+</html>
